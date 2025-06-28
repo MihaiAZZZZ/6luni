@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>6 LUNI</title>
+</head>
+<body>
+    
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+     <a class="navbar-brand" href="#">
+      <img src="./img/yellow-moon-16536.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      6Luni
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link active" aria-current="page" href="#">Acasa</a>
+        <a class="nav-link" href="melodie.html">Melodie</a>
+        <a class="nav-link" href="100.html">100 de lucruri</a>
+        <a class="nav-link" href="galerie.html">Galerie</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="hero position-relative">
+        <h1>6 Luni</h1>
+        <p>Iti vine sa crezi? Nici mie.</p>
+        <div class="scroll-down">
+            <span>Da scroll mai in jos</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div id="puzzle-container" class="d-none d-md-block" style="position:absolute;right:32px;bottom:32px;z-index:10;">
+          <button id="puzzle-btn" class="btn btn-gradient-purple-pink" style="border-radius:22px;font-size:1.1rem;padding:10px 22px;box-shadow:0 2px 8px rgba(124,0,255,0.10);font-weight:600;letter-spacing:1px;">🔒 Rezolvă puzzle</button>
+          <div id="puzzle-modal" style="display:none;position:absolute;bottom:60px;right:0;background:#fff3fc;border-radius:18px;box-shadow:0 8px 32px rgba(124,0,255,0.18);padding:24px 28px;min-width:260px;max-width:320px;">
+            <div style="font-weight:600;color:#7c00ff;margin-bottom:12px;">Ce cuvânt format din 7 litere stă la baza acestui site?</div>
+            <input id="puzzle-answer" type="text" class="form-control mb-2" placeholder="Răspunsul tău..." autocomplete="off" style="border-radius:12px;">
+            <button id="puzzle-submit" class="btn btn-gradient-purple-pink w-100" style="border-radius:12px;">Verifică</button>
+            <div id="puzzle-feedback" style="min-height:24px;margin-top:8px;font-size:1rem;"></div>
+          </div>
+        </div>
+    </div>
+
+    <div class="section2 container my-5">
+      <div class="row align-items-center flex-lg-row flex-column-reverse">
+        <div class="col-lg-6 text-lg-start text-center mb-4 mb-lg-0">
+          <h2 class="section-title mb-4">Despre Noi</h2>
+          <p class="lead">Suntem aici să sărbătorim fiecare moment important. Povestea noastră a început cu 6 luni în urmă și continuă cu fiecare zi plină de culoare, zâmbete și amintiri frumoase!</p>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="./img/IMG_4456.png" alt="Despre Noi" class="img-fluid section2-img" style="max-height: 340px; border-radius: 18px; box-shadow: 0 8px 32px rgba(124,0,255,0.12); background: #fff3fc; padding: 32px;" />
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-section container my-5">
+      <h2 class="section-title mb-5 text-center">Cronologie</h2>
+      <div class="timeline d-flex justify-content-between flex-wrap">
+        <div class="timeline-item" data-month="Ianuarie">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">Ianuarie</div>
+        </div>
+        <div class="timeline-item" data-month="Februarie">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">Februarie</div>
+        </div>
+        <div class="timeline-item" data-month="Martie">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">Martie</div>
+        </div>
+        <div class="timeline-item" data-month="Aprilie">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">Aprilie</div>
+        </div>
+        <div class="timeline-item" data-month="Mai">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">Mai</div>
+        </div>
+        <div class="timeline-item" data-month="Iunie">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">Iunie</div>
+        </div>
+        <div class="timeline-item" data-month="Iulie">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">Iulie</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('.timeline-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.classList.add('active');
+        });
+        item.addEventListener('mouseleave', function() {
+          this.classList.remove('active');
+        });
+      });
+    </script>
+    <script src="timeline-popup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script>
+      // Puzzle logic
+      const puzzleBtn = document.getElementById('puzzle-btn');
+      const puzzleModal = document.getElementById('puzzle-modal');
+      const puzzleAnswer = document.getElementById('puzzle-answer');
+      const puzzleSubmit = document.getElementById('puzzle-submit');
+      const puzzleFeedback = document.getElementById('puzzle-feedback');
+      let puzzleOpen = false;
+      puzzleBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        puzzleModal.style.display = puzzleOpen ? 'none' : 'block';
+        puzzleOpen = !puzzleOpen;
+        puzzleFeedback.textContent = '';
+        puzzleAnswer.value = '';
+        puzzleAnswer.focus();
+      });
+      document.addEventListener('click', function(e) {
+        if (puzzleOpen && !puzzleModal.contains(e.target) && e.target !== puzzleBtn) {
+          puzzleModal.style.display = 'none';
+          puzzleOpen = false;
+        }
+      });
+      puzzleSubmit.addEventListener('click', function(e) {
+        e.preventDefault();
+        const answer = puzzleAnswer.value.trim().toLowerCase();
+        if (answer === '6luni' || answer === '6 luni' || answer === 'sase luni' || answer === 'șase luni') {
+          puzzleFeedback.innerHTML = '<span style="color:#28a745;font-weight:600;">Corect! Te duc spre guestbook... 💌</span>';
+          setTimeout(()=>{ window.location.href = 'guestbook.html'; }, 1200);
+        } else {
+          puzzleFeedback.innerHTML = '<span style="color:#d726a7;font-weight:600;">Mai încearcă!</span>';
+        }
+      });
+      puzzleAnswer.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') puzzleSubmit.click();
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie Foto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-section {
+      background: #fff3fc;
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(124,0,255,0.10);
+      padding: 48px 16px 48px 16px;
+      max-width: 1100px;
+      margin: 48px auto;
+    }
+    .gallery-section h1 {
+      color: #7c00ff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 991px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .gallery-img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(124,0,255,0.10);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .gallery-img:hover {
+      transform: scale(1.04) rotate(-2deg);
+      box-shadow: 0 8px 32px rgba(255,71,250,0.18);
+    }
+    .gallery-modal-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(40, 0, 50, 0.75);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      transition: background 0.3s;
+    }
+    .gallery-modal-bg.active {
+      display: flex;
+    }
+    .gallery-modal {
+      background: #fff3fc;
+      border-radius: 24px;
+      box-shadow: 0 8px 40px rgba(124,0,255,0.18);
+      padding: 24px;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      animation: galleryPop 0.4s cubic-bezier(.4,2,.6,1);
+    }
+    @keyframes galleryPop {
+      0% { opacity: 0; transform: scale(0.85) translateY(40px); filter: blur(8px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+    }
+    .gallery-modal img {
+      max-width: 70vw;
+      max-height: 60vh;
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(124,0,255,0.10);
+    }
+    .gallery-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 2rem;
+      color: #ff47fa;
+      cursor: pointer;
+      font-weight: 700;
+      transition: color 0.2s;
+      z-index: 10;
+    }
+    .gallery-modal-close:hover {
+      color: #7c00ff;
+    }
+     .btn-gradient-purple {
+      background: linear-gradient(121deg,rgba(124, 0, 255, 1) 0%, rgba(255, 71, 250, 1) 77%);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(124,0,255,0.10);
+      padding: 12px 32px;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .btn-gradient-purple:hover, .btn-gradient-purple:focus {
+      background: linear-gradient(121deg,rgba(255, 71, 250, 1) 0%, rgba(124, 0, 255, 1) 77%);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(255,71,250,0.18);
+      
+    }
+    @media (max-width: 600px) {
+      .gallery-section {
+        padding: 24px 4px;
+        border-radius: 18px;
+      }
+      .gallery-modal img {
+        max-width: 95vw;
+        max-height: 50vh;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="gallery-section">
+    <h1>Galerie Foto</h1>
+    <div class="gallery-grid">
+      <img src="img/IMG_4456.png" alt="Poza 1" class="gallery-img">
+      <img src="img/WhatsApp Image 2025-06-24 at 06.27.00_8577c22b.jpg" alt="Poza 2" class="gallery-img">
+      <img src="img/WhatsApp Image 2025-06-20 at 06.05.21_9beaa737.jpg" alt="Poza 3" class="gallery-img">
+        <img src="./img/WhatsApp Image 2025-06-20 at 06.05.20_9b705237.jpg" alt="Poza 4" class="gallery-img">
+        <img src="img/WhatsApp Image 2025-06-19 at 04.53.51_566b6868.jpg" alt="Poza 5" class="gallery-img">
+        <img src="img/WhatsApp Image 2025-06-14 at 04.17.32_59b55d9c.jpg" alt="Poza 6" class="gallery-img">
+        <img src="img/WhatsApp Image 2025-06-11 at 06.06.21_ad114b9f.jpg" alt="Poza 7" class="gallery-img">
+        <img src="img/WhatsApp Image 2025-06-07 at 15.22.28_08e6f02c.jpg" alt="Poza 8" class="gallery-img">
+        <img src="img/WhatsApp Image 2025-06-05 at 09.23.33_ad3b7241.jpg" alt="Poza 9" class="gallery-img">
+        <img src="img/WhatsApp Image 2025-06-04 at 05.55.35_19f9ef01.jpg" alt="Poza 10" class="gallery-img">
+      <!-- Adaugă aici mai multe imagini după preferință -->
+    </div>
+  </div>
+  <div class="gallery-modal-bg" id="galleryModalBg">
+    <div class="gallery-modal">
+      <span class="gallery-modal-close">&times;</span>
+      <img src="" alt="Preview" id="galleryModalImg">
+    </div>
+  </div>
+  <div class="text-center my-4">
+    <a href="index.html" class="btn btn-lg btn-gradient-purple">Înapoi la pagina principală</a>
+  </div>
+  <script>
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('click', function() {
+        document.getElementById('galleryModalImg').src = this.src;
+        document.getElementById('galleryModalBg').classList.add('active');
+      });
+    });
+    document.getElementById('galleryModalBg').addEventListener('click', function(e) {
+      if (e.target === this || e.target.classList.contains('gallery-modal-close')) {
+        this.classList.remove('active');
+        document.getElementById('galleryModalImg').src = '';
+      }
+    });
+  </script>
+</body>
+</html>

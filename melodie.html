@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melodie</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .melodie-section {
+      background: #fff3fc;
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(124,0,255,0.10);
+      padding: 48px 16px 48px 16px;
+      max-width: 700px;
+      margin: 48px auto;
+      text-align: center;
+    }
+    .melodie-section h1 {
+      color: #7c00ff;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+    .melodie-section iframe {
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(124,0,255,0.10);
+      width: 100%;
+      max-width: 560px;
+      min-height: 315px;
+      aspect-ratio: 16/9;
+      margin: 0 auto;
+      background: #000;
+    }
+    @media (max-width: 600px) {
+      .melodie-section {
+        padding: 24px 4px;
+        border-radius: 18px;
+      }
+      .melodie-section iframe {
+        min-height: 180px;
+        max-width: 98vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="d-flex justify-content-center align-items-center min-vh-100" style="background: linear-gradient(135deg, #f3c6ff 0%, #ffe3fa 100%);">
+    <div>
+      <div class="melodie-section">
+        <h1>Crezi că nu puneam și o melodie pe aici?</h1>
+        <div style="margin-top: 2.5rem;">
+          <audio controls style="width:100%;max-width:420px;border-radius:12px;box-shadow:0 2px 8px rgba(124,0,255,0.10);background:#fff;">
+            <source src="music/Lidia Buble feat. Adrian Sina - Noi Simtim La Fel (Official Video).mp3" type="audio/mpeg">
+            Melodia nu poate fi redată în browserul tău.
+          </audio>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="index.html" class="btn btn-gradient-purple-pink px-4 py-2 fw-semibold" style="border-radius: 24px; font-size: 1.1rem; box-shadow: 0 2px 8px rgba(124,0,255,0.10); background: linear-gradient(90deg, #d726a7 0%, #7c00ff 100%); color: #fff; border: none; transition: background 0.2s;">&larr; Înapoi la pagina principală</a>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
